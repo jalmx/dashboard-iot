@@ -1,0 +1,24 @@
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,body{
+    font-size: 16px;
+    max-width: 1200px;
+    margin: auto;
+    overflow-x: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.hidden{
+    display: none !important;
+}
+
+.pointer{
+    cursor: pointer;
+}
+.cursor{
+    cursor: default;
+}

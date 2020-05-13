@@ -1,0 +1,7 @@
+# 2 space indentation
+[*.pug]
+indent_style = space
+indent_size = 2
+[*.scss]
+indent_style = space
+indent_size = 2

@@ -1,0 +1,83 @@
+.modal
+  .card.modal__card#card
+    header.card__header
+      input(list="modal-pines" placeholder="D0").modal__url#modal-pin
+      datalist.modal__datalist#modal-pines
+        option A0
+        option A1
+        option A2
+        option A3
+        option A4
+        option A5
+        option A6
+        option A7
+        option A8
+        option A9
+        option D0
+        option D1
+        option D2
+        option D3
+        option D4
+        option D5
+        option D6
+        option D7
+        option D8
+        option D9
+        option D10
+        option D11
+        option D12
+        option D13
+        option DAC0
+        option DAC1
+        option DAC3
+        option PWM
+        option PWM1
+        option PWM2
+        option PWM3
+        option PWM4
+        option PWM5
+        option PWM6
+      input(list="modal-boards" placeholder="ESP8266").modal__url#modal-board 
+      datalist.modal__datalist#modal-boards
+        option ESP8266
+        option ESP32
+        option Arduino Uno
+        option Arduino Mega
+        option Arduino Mini
+    .card__body.modal__body
+      .modal__body__top
+        input(type="color", name="", value="#5D4037")#modal-color
+        .icon-thermometer.icons-size.icns-brown#modal-icon
+        input(list="modal-subfije" ).modal__url
+        datalist.modal__datalist#modal-subfije
+          option (Empty)
+          option ºC
+          option ºF
+          option V
+          option V
+          option mV
+      .modal__body__button
+        select(name="").modal__select#modal-thing
+          option(value="bulb") Bulb
+          option(value="fan") Fan
+          option(value="cam") Cam
+          option(value="current") Current
+          option(value="lock") Lock
+          option(value="presence") Presence
+          option(value="switch") switch
+          option(value="key") Key
+          option(value="batery") batery
+          option(value="bluetooth") Bluetooth
+          option(value="thermometer") Thermometer
+          option(value="airc") A/C
+          option(value="motor") Motor
+        input(type="text" placeholder="Ligth Room").modal__url
+    footer.card__footer 
+      input(type="url" placeholder="url mqtt" title="url mqtt").modal__url#modal-url
+      .card__footer__btn
+        label.switch
+          input(type='checkbox' checked='')#modal-subscribe
+          span.slider.round 
+    .modal__btns
+      a(href="#").btn.btn__cancel#modal-cancel Cancel
+      a(href="#").btn.btn__ok#modal-ok Ok 
