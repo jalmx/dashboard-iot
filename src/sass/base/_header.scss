@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background: var(--color-header);
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
   padding-bottom: 1.5rem;
   margin-bottom: 2rem;
   color: white;
@@ -11,13 +11,13 @@
 
   h1 {
     letter-spacing: 2px;
-    margin: .5rem 0;
+    margin: 0.5rem 0;
     text-align: center;
   }
   & span {
     font-size: 0.8rem;
     a {
-      color: white; 
+      color: white;
     }
   }
   .input__ {
@@ -25,15 +25,16 @@
       width: 100%;
       display: flex;
       justify-content: space-between;
+      flex-direction: column;
+      margin-bottom: 0.5rem;
     }
     &broker {
-      width: 80%;
       font-size: 1.45rem;
+      padding: 0.5rem;
+      margin-bottom: 0.3rem;
     }
     &btn {
-      width: 20%;
-      padding: .7rem;
-      margin-left: 1rem;
+      padding: 0.7rem;
       background: white;
       color: white;
       border-radius: 10px;
@@ -44,18 +45,45 @@
       font-weight: bold;
       box-shadow: 2px 2px 5px gray;
     }
-   
+    
+    @media only screen and (min-width: 900px) {
+      &container {
+        
+        flex-direction: row;
+        margin-bottom: .3rem;
+        align-items: center;
+      }
+      &broker {
+        width: 80%;
+        margin-bottom: 0;
+      }
+      &btn {
+        width: 20%;
+        margin-left: 1rem;
+      } 
+    } 
+
   }
 
-  .btn_connect{
-    background: #8BC34A;
-  }
-  .btn_connected{
-    background: #DD2C00;
+  .input__label{
+    margin-right: 1rem;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+    
+    &:first-child{
+    margin-left: 0;
+    }
+    
   }
 
+  .btn_connect {
+    background: #8bc34a;
+  }
+  .btn_connected {
+    background: #dd2c00;
+  }
 
-  .btn__add{
+  .btn__add {
     border-radius: 50%;
     background: var(--color-cta);
     font-size: 2rem;

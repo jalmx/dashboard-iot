@@ -1,4 +1,4 @@
-.modal
+.modal.hidden#modal
   .card.modal__card#card
     header.card__header
       input(list="modal-pines" placeholder="D0").modal__url#modal-pin
@@ -46,10 +46,10 @@
         option Arduino Mini
     .card__body.modal__body
       .modal__body__top
-        input(type="color", name="", value="#5D4037")#modal-color
-        .icon-thermometer.icons-size.icns-brown#modal-icon
-        input(list="modal-subfije" ).modal__url
-        datalist.modal__datalist#modal-subfije
+        input(type="color", name="", value="#FFD600")#modal-color
+        .icon-bulb.icons-size.icns-yellow#modal-icon
+        input(list="modal-subfijes" ).modal__url#modal-subfije
+        datalist.modal__datalist#modal-subfijes
           option (Empty)
           option ºC
           option ºF
@@ -73,11 +73,14 @@
           option(value="motor") Motor
         input(type="text" placeholder="Ligth Room").modal__url
     footer.card__footer 
-      input(type="url" placeholder="url mqtt" title="url mqtt").modal__url#modal-url
+      input(type="url" placeholder="topic" title="topic").modal__url#modal-url
       .card__footer__btn
         label.switch
           input(type='checkbox' checked='')#modal-subscribe
-          span.slider.round 
+          span.slider.round
+    .topic
+      .topic__subscribe#topic-subscribe topic-subscribe 
+      .topic__public#topci-publish topci-publish 
     .modal__btns
       a(href="#").btn.btn__cancel#modal-cancel Cancel
       a(href="#").btn.btn__ok#modal-ok Ok 

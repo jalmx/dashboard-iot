@@ -2,9 +2,9 @@
   "name": "dashboard-iot",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.js", 
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
@@ -36,7 +36,13 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
+    "jest": "^26.0.1",
+    "puppeteer": "^3.0.4",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "paho-mqtt": "^1.1.0",
+    "uid": "^1.0.0"
   }
 }
