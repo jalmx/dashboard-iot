@@ -27,11 +27,12 @@
       justify-content: space-between;
       flex-direction: column;
       margin-bottom: 0.5rem;
+      
     }
     &broker {
-      font-size: 1.45rem;
+      font-size: 1.4rem;
       padding: 0.5rem;
-      margin-bottom: 0.3rem;
+    
     }
     &btn {
       padding: 0.7rem;
@@ -48,14 +49,17 @@
     
     @media only screen and (min-width: 900px) {
       &container {
-        
         flex-direction: row;
         margin-bottom: .3rem;
         align-items: center;
+       
       }
       &broker {
         width: 80%;
         margin-bottom: 0;
+        flex-grow: 1;
+        flex-shrink: 1;
+        width: 10%;
       }
       &btn {
         width: 20%;
