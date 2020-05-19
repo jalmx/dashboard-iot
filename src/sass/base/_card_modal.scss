@@ -8,8 +8,8 @@
   z-index: 1;
   display: flex;
   justify-content: center;
-  align-items: center; 
-  
+  align-items: center;
+
   &__card {
     margin: auto;
     background: white;
@@ -18,14 +18,14 @@
 
   &__url {
     padding: 0.5rem;
-    width: 50%;
+    width: 25%;
     flex-grow: 1;
+    flex-shrink: 1;
     font-size: 1rem;
     line-height: 1rem;
   }
 
-  &__body { 
-    
+  &__body {
     &__top {
       width: 100%;
       padding: 0.5rem 0;
@@ -34,10 +34,13 @@
       align-items: center;
     }
     &__button {
+      background: yellow;
       display: flex;
       flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      height: 100%;
       input {
-        margin-top: 0.5rem;
         width: 100%;
       }
     }
@@ -46,7 +49,7 @@
     font-size: 1rem;
     option {
       font-size: 1rem;
-      padding: 2rem; 
+      padding: 2rem;
     }
   }
   &__btns {
