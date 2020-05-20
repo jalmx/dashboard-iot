@@ -2,7 +2,7 @@
 /**
  * Almacenara todos los widgets del dashboard
  */
- 
+
 const hostId = "host";
 const userId = "xizuth-id";
 const widgetListId = "widgets";
@@ -24,20 +24,23 @@ const saveHostStorage = (host = { host, port }) => {
 };
 
 const getHostStorage = () => {
-  const host = localStorage.getItem(hostId)
-  
+  const host = localStorage.getItem(hostId);
+
   return JSON.parse(host) || null;
 };
-const insertWidget = (widget = {}) => {
-  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || [];
+
+const insertWidget = (widget) => {
+  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array();
+  console.log("lista de widgets", widgets);
   widgets.push(widget);
+  localStorage.setItem(widgetListId, JSON.stringify(widgets));
 };
 
 const removeWidget = (widgetId) => {
-  let widgets = localStorage.getItem(widgetId); 
+  let widgets = localStorage.getItem(widgetId);
 
   if (widgets == null || widgets.length == 0) {
-    return []
+    return [];
   }
 
   widgets = JSON.parse(widgets);
@@ -57,5 +60,5 @@ module.exports = {
   getHostStorage,
   insertWidget,
   removeWidget,
-  getAllWidget
+  getAllWidget,
 };

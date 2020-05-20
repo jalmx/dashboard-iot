@@ -1,6 +1,6 @@
 module.exports = /*html*/ `
 <div class="modal" id="modal">
-    <div class="card modal__card" id="card">
+    <div class="card modal__card" id="card-">
         <header class="card__header"><input class="modal__url" list="modal-pines" placeholder="D0"
                 id="modal-pin" /><datalist class="modal__datalist" id="modal-pines">
                 <option>A0</option>
@@ -72,6 +72,9 @@ module.exports = /*html*/ `
                     <option value="thermometer">Thermometer</option>
                     <option value="airc">A/C</option>
                     <option value="motor">Motor</option>
+                    <option value="slider">Slider</option>
+                    <option value="input">Input Text</option>
+                    <option value="input">Color picker</option>
                 </select><input class="modal__url" type="text" placeholder="Ligth Room" /></div>
         </div>
         <footer class="card__footer"> <input class="modal__url" type="url" placeholder="topic" title="topic"
