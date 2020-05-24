@@ -2,29 +2,18 @@ article.card#card-
   header.card__header
     h3.card__header__pin.cursor#card-pin D0
     h3.card__header__pin.cursor#card-pin ESP8266
-    i.card__header__menu.icon-menu#card-menu
+    i.card__header__menu.icon-menu
+      .card__header__menu__menu#card-menu
   .card__body
-    h1.card__body__icon.pointer.icons-size.icns-red#card-icon 33.54V
-    h2.card__body__text.pointer#card-text Voltimetro
+    div(data-color-on="" data-color-off="" data-icon="").card__body__icon.pointer.icons-size.icns-red#card-icon 1024
+    h2(title="Description").card__body__description.pointer#card-description Voltimetro  
   footer.card__footer
-    input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
-    .card__footer__btn#btn-on-off
+    .card__footer__topic
+      input(type="url" title="Subscribe topic" disabled="" placeholder="topic subscribe").card__footer__url#card-topic-subscribe
+      input(type="url" title="Publish topic" disabled="" placeholder="topic publish").card__footer__url#card-topic-publish
+    .card__footer__btn
       label.switch
-        input(type='checkbox' checked='')
-        span.slider.round
-article.card#card
-  header.card__header
-    h3.card__header__pin.cursor#card-pin D1
-    h3.card__header__pin.cursor#card-pin ESP8266
-    i.card__header__menu.icon-menu#card-menu
-  .card__body
-    h1.card__body__icon.pointer.icon-flash.icns-yellow.icons-size#card-icon
-    h2.card__body__text.pointer#card-text Corriente
-  footer.card__footer
-    input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
-    .card__footer__btn#btn-on-off
-      label.switch
-        input(type='checkbox' checked='')
+        input(type='checkbox' checked='')#card-btn-status
         span.slider.round 
 article.card#card
   header.card__header
@@ -33,8 +22,24 @@ article.card#card
     i.card__header__menu.icon-menu#card-menu
   .card__body
     h1.card__body__icon.pointer.icons-size#card-icon
-      input(type="text").input__wiget
-    h2.card__body__text.pointer#card-text Entrada de texto
+      textarea(name="", cols="30", rows="10")#textarea-widget
+    h2.card__body__description.pointer#card-text Entrada de texto
+  footer.card__footer
+    input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
+    .card__footer__btn#btn-on-off
+      label.switch
+        input(type='checkbox' checked='')
+        span.slider.round 
+article.card#card
+  header.card__header
+    h3.card__header__pin.cursor#card-pin D20
+    h3.card__header__pin.cursor#card-pin ESP8266
+    i.card__header__menu.icon-menu#card-menu
+  .card__body
+    h1.card__body__icon.pointer.icons-size.rangen__container#card-icon
+      label(for="range-widget") 50%
+      input(type="range" min="0" max="100" step="1").input__wiget#range-widget
+    h2.card__body__description.pointer#card-text PWM
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off
@@ -48,23 +53,9 @@ article.card#card
     i.card__header__menu.icon-menu#card-menu
   .card__body
     h1.card__body__icon.pointer.icons-size#card-icon
-      input(type="range" min="0" max="100" step="1").input__wiget
-    h2.card__body__text.pointer#card-text PWM
-  footer.card__footer
-    input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
-    .card__footer__btn#btn-on-off
-      label.switch
-        input(type='checkbox' checked='')
-        span.slider.round 
-article.card#card
-  header.card__header
-    h3.card__header__pin.cursor#card-pin D20
-    h3.card__header__pin.cursor#card-pin ESP8266
-    i.card__header__menu.icon-menu#card-menu
-  .card__body
-    h1.card__body__icon.pointer.icons-size#card-icon
+      label(for="color-wifget") red
       input(type="color").input__wiget
-    h2.card__body__text.pointer#card-text LED RGB
+    h2.card__body__description.pointer#card-text LED RGB
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off
@@ -77,8 +68,8 @@ article.card#card
     h3.card__header__pin.cursor#card-pin ESP8266
     i.card__header__menu.icon-menu#card-menu
   .card__body
-    h1.card__body__icon.pointer.icon-fan.icons-size.icns-green#card-icon
-    h2.card__body__text.pointer#card-text Ventilador
+    h1.card__body__icon.pointer.icon-fan.icons-size.icns-green.animate-spin#card-icon
+    h2.card__body__description.pointer#card-text Ventilador
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off
@@ -92,7 +83,7 @@ article.card#card
     i.card__header__menu.icon-menu#card-menu
   .card__body
     h1.card__body__icon.pointer.icon-bulb.icons-size.icns-yellow#card-icon
-    h2.card__body__text.pointer#card-text Cuarto 1
+    h2.card__body__description.pointer#card-text Cuarto 1
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off
@@ -106,7 +97,7 @@ article.card#card
     i.card__header__menu.icon-menu#card-menu
   .card__body
     h1.card__body__icon.pointer.icon-bluetooth.icons-size.icns-blue#card-icon
-    h2.card__body__text.pointer#card-text Bluetooth
+    h2.card__body__description.pointer#card-text Bluetooth
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off
@@ -120,7 +111,24 @@ article.card#card
     i.card__header__menu.icon-menu#card-menu
   .card__body
     h1.card__body__icon.pointer.icn-motor-dc-fill.icons-size.icns-brown#card-icon
-    h2.card__body__text.pointer#card-text Motor 1
+    h2.card__body__description.pointer#card-text Motor 1
+  footer.card__footer
+    input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
+    .card__footer__btn#btn-on-off
+      label.switch
+        input(type='checkbox' checked='')
+        span.slider.round 
+article.card#card
+  header.card__header
+    h3.card__header__pin.cursor#card-pin D5
+    h3.card__header__pin.cursor#card-pin ESP8266
+    i.card__header__menu.icon-menu#card-menu
+  .card__body
+    h1.card__body__icon#card-icon
+      label.switch
+        input(type='checkbox' checked='')
+        span.slider.round 
+    h2.card__body__description.pointer#card-text Switch
   footer.card__footer
     input(type="url" placeholder="topic" title="topic").card__footer__url#card-url
     .card__footer__btn#btn-on-off

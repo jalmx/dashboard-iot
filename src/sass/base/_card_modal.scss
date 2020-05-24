@@ -14,6 +14,27 @@
     margin: auto;
     background: white;
     height: auto;
+
+    &__footer {
+      align-items: center;
+      &__topic {
+        display: flex;
+        flex-direction: column; 
+        width: 100%; 
+        flex-grow: 1;
+        flex-shrink: 1;
+        & * { 
+          width: 100% !important; 
+        }
+      }
+
+      &__playload{
+        & > *{
+          width: 50% !important;
+        }
+        
+      }
+    }
   }
 
   &__url {
@@ -33,8 +54,13 @@
       justify-content: space-between;
       align-items: center;
     }
+    .input__color {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
     &__button {
-      background: yellow;
       display: flex;
       flex-direction: column;
       width: 100%;

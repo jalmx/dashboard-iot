@@ -1,5 +1,5 @@
-.modal.hidden#modal
-  .card.modal__card#card-
+.modal#modal
+  .card.modal__card
     header.card__header
       input(list="modal-pines" placeholder="D0").modal__url#modal-pin
       datalist.modal__datalist#modal-pines
@@ -43,10 +43,16 @@
         option ESP32
         option Arduino Uno
         option Arduino Mega
-        option Arduino Mini
+        option Arduino Mini 
     .card__body.modal__body
       .modal__body__top
-        input(type="color", name="", value="#FFD600")#modal-color
+        .input__color
+          div
+            label(for="modal-color-on") ON
+            input(type="color", name="", value="#FFD600")#modal-color-on
+          div
+            label(for="modal-color-off") OFF
+            input(type="color", name="", value="#BDBDBD")#modal-color-off
         .icon-bulb.icons-size.icns-yellow#modal-icon
         input(list="modal-subfijes" ).modal__url#modal-subfije
         datalist.modal__datalist#modal-subfijes
@@ -58,32 +64,41 @@
           option mV
       .modal__body__button
         select(name="").modal__select#modal-thing
-          option(value="bulb") Bulb
-          option(value="fan") Fan
-          option(value="cam") Cam
-          option(value="current") Current
-          option(value="lock") Lock
-          option(value="presence") Presence
-          option(value="switch") switch
-          option(value="key") Key
-          option(value="batery") batery
-          option(value="bluetooth") Bluetooth
-          option(value="thermometer") Thermometer
-          option(value="airc") A/C
-          option(value="motor") Motor
-          option(value="slider") Slider
-          option(value="input") Input Text
-          option(value="input") Color picker
+          option(data-input="" data-color="#FFD600" data-icon-off="" data-icon-on="icon-bulb" data-class= "" , value="bulb") Bulb
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="Text") Text
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-fan" data-class= "animate-spin" , value="fan") Fan
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-videocam" data-class= "" , value="cam") Cam
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-flash" data-class= "" , alue="current") Current
+          option(data-input="" data-color="" data-icon-off="icon-lock-open" data-icon-on="icon-lock" data-class= "" ,value="lock") Lock
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-account-alert" data-class= "" ,value="presence") Person
+          option(data-input="" data-color="" data-icon-off="icon-toggle-switch-off" data-icon-on="icon-toggle-switch" data-class= "" ,value="switch") switch
+          option(data-input="" data-color="" data-icon-off="icon-toggle-off" data-icon-on="icon-toggle-on" data-class= "" ,value="switch") Toggle
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-key" data-class= "" ,value="key") Key
+          option(data-input="" data-color="" data-icon-off="icon-battery-0" data-icon-on="icon-battery-4" data-class= "" ,value="batery") batery
+          option(data-input="" data-color="#3949AB" data-icon-off="" data-icon-on="icon-bluetooth" data-class= "" ,value="bluetooth") Bluetooth
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-thermometer" data-class= "" ,value="thermometer") Thermometer
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-snow" data-class= "" ,value="a/c") A/C
+          option(data-input="" data-color="" data-icon-off="icn-motor-dc" data-icon-on="icn-motor-dc-fill" data-class= "" ,value="motor") Motor
+          option(data-input="" data-color="" data-icon-off="" data-icon-on="icon-car" data-class= "") Car
+          option(data-input="range" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="slider") Slider
+          option(data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="input") Input Text
+          option(data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="input") Color picker
+          option(data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="textarea") Logger
         input(type="text" placeholder="Ligth Room").modal__url
-    footer.card__footer 
-      input(type="url" placeholder="topic" title="topic").modal__url#modal-url
+    footer.card__footer.modal__card__footer
+      .modal__card__footer__topic
+        input(type="url" placeholder="Subscribe Topic" title="topic").modal__url#topic-subscribe
+        .modal__card__footer__playload
+          input(type="text" placeholder="playload on").modal__url#payload-subscribe-on
+          input(type="text" placeholder="payload off").modal__url#payload-subscribe-off
+        input(type="url" placeholder="Pubish Topic" title="topic").modal__url#topic-publish
+        .modal__card__footer__playload
+          input(type="text" placeholder="payload on").modal__url#payload-publish-on
+          input(type="text" placeholder="payload off").modal__url#payload-publish-off
       .card__footer__btn
         label.switch
           input(type='checkbox' checked='')#modal-subscribe
-          span.slider.round
-    .topic
-      .topic__subscribe#topic-subscribe topic-subscribe 
-      .topic__public#topci-publish topci-publish 
+          span.slider.round 
     .modal__btns
-      a(href="#").btn.btn__cancel#modal-cancel Cancel
-      a(href="#").btn.btn__ok#modal-ok Ok 
+      a(href="/").btn.btn__cancel#modal-cancel Cancel
+      a(href="/").btn.btn__ok#modal-ok Ok

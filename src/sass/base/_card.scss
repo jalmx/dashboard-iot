@@ -1,13 +1,13 @@
 .card {
   width: 320px;
-  height: 320px;
+  height: auto;
   border-radius: 20px;
   padding: 1rem;
   border: 1px solid var(--color-main);
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   margin-bottom: 1rem;
-position: relative;
+  position: relative;
   &__header,
   &__body,
   &__footer {
@@ -27,7 +27,7 @@ position: relative;
     flex: auto;
     padding: 0.5rem;
 
-    &__text {
+    &__description {
       display: flex;
       justify-content: center;
       align-items: center;
@@ -35,7 +35,7 @@ position: relative;
     }
 
     &__icon,
-    &__text {
+    &__description {
       display: flex;
       font-weight: normal;
       text-align: center;
@@ -48,19 +48,25 @@ position: relative;
       flex: auto;
     }
 
-    &__text {
+    &__description {
     }
   }
   &__footer {
     justify-content: space-between;
     padding: 0.5rem 0;
+    align-items: center;;
+
+    &__topic{ 
+      display: flex;
+      flex-direction: column;
+    }
 
     &__url {
       font-size: 1rem;
       padding: 0.5rem;
       flex-grow: 1;
       flex-shrink: 1;
-      width: 50%;
+      width: 100%;
       border: 1px var(--color-main);
       border-style: none none solid none;
     }

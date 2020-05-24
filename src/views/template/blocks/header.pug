@@ -9,6 +9,7 @@ header.header#header
       option broker.hivemq.com:8000
       option broker.mqttdashboard.com:8000
       option test.mosquitto.org:8080
+      option test.mosquitto.org:8081
     a.input__btn(href="#" ).btn_connect#btn-connect Connect
   //- #connected-broker Connected to: test.mosquitto.org:8080
   .input__container
@@ -21,4 +22,4 @@ header.header#header
   .header__note
     i Nota: The broker should support Websocket 
   .btn__add__container
-    a(href="#").btn__add#add-widget +
+    a(href="/").btn__add#add-widget +

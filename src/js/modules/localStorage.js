@@ -30,8 +30,7 @@ const getHostStorage = () => {
 };
 
 const insertWidget = (widget) => {
-  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array();
-  console.log("lista de widgets", widgets);
+  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array(); 
   widgets.push(widget);
   localStorage.setItem(widgetListId, JSON.stringify(widgets));
 };
