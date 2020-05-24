@@ -10,9 +10,6 @@ const getInput = (data) => {
 };
 
 module.exports = (data) => {
-  console.log('====================================');
-  console.log(data);
-  console.log('====================================');
   return /*html*/ ` 
 <header class="card__header">
     <h3 class="card__header__pin cursor" id="card-pin">${data.pin}</h3>

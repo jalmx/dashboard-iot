@@ -1,8 +1,3 @@
-// TODO:
-/**
- * Almacenara todos los widgets del dashboard
- */
-
 const hostId = "host";
 const userId = "xizuth-id";
 const widgetListId = "widgets";
