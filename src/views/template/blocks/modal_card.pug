@@ -59,9 +59,10 @@
           option (Empty)
           option ºC
           option ºF
-          option V
-          option V
           option mV
+          option V
+          option mA
+          option A
       .modal__body__button
         select(name="").modal__select#modal-thing
           option(data-input="" data-color="#FFD600" data-icon-off="" data-icon-on="icon-bulb" data-class= "" , value="bulb") Bulb
@@ -84,7 +85,7 @@
           option(data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="input") Input Text
           option(data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="input") Color picker
           option(data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class= "" , value="textarea") Logger
-        input(type="text" placeholder="Ligth Room").modal__url
+        input(type="text" placeholder="Ligth Room").modal__url#modal-input-description
     footer.card__footer.modal__card__footer
       .modal__card__footer__topic
         input(type="url" placeholder="Subscribe Topic" title="topic").modal__url#topic-subscribe

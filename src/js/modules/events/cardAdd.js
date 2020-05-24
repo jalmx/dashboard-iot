@@ -36,6 +36,7 @@ const getIconFromModel = () => {
 
   return iconFeature;
 };
+
 const btnAddCard = () => {
   document.getElementById("add-widget").addEventListener("click", (e) => {
     e.preventDefault();
@@ -63,8 +64,10 @@ const getParametersFromCard = () => {
   const payloadPublishOff = document.getElementById("payload-publish-off");
   const descriptionInput = document.getElementById("modal-input-description");
 
-  const widget = {
-    id: `widget-${uid(25)}`,
+  const id = uid(25)
+  const widget = { 
+    id: `widget-${id}`,
+    _id: id,
     pin: pinInput.value,
     board: boardInput.value,
     icon: getIconFromModel(),
