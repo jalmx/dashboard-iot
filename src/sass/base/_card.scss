@@ -48,8 +48,6 @@
       flex: auto;
     }
 
-    &__description {
-    }
   }
   &__footer {
     justify-content: space-between;
@@ -76,4 +74,12 @@
       margin-left: 0.5rem;
     }
   }
+}
+
+.logger{
+  padding: .25rem;
+  border-radius: 10px;
+  font-size: .8rem;
+  border: 1px solid var(--color-cta);
+  resize: none;
 }

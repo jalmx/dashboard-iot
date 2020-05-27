@@ -1,4 +1,6 @@
 import { getUserStorage, getHostStorage } from "./localStorage";
+import {subscriptions, publishers,messageArrived} from './connections'
+import Toast from './toast'
 let client = null;
 
 const disabledHeader = (status) => {
@@ -25,6 +27,7 @@ const getConnectionSetting = (user) => {
     onFailure: function (error) {
       console.log(error); 
       disabledHeader(false);
+      Toast("Fail Connection","#FF2400")
       alert("Fail Connection", error.errorMessage);
     },
   };
@@ -38,27 +41,24 @@ const getConnectionSetting = (user) => {
 };
 
 function onConnect() {
-  // Once a connection has been made, make a subscription and send a message.
   console.log("Connected");
-  client.subscribe("/home/");
-  let message = new Paho.MQTT.Message(" dashboard Xizuth");
-  message.destinationName = "/home/";
-  client.send(message);
+  Toast("Connected","#348017")
+  subscriptions(client)
+  publishers(client)
 }
 
-// called when the client loses its connection
+// called when the client loses its connection 
 function onConnectionLost(responseObject) {
-  if (responseObject.errorCode !== 0) {
-    alert("Fail Connection");
+  if (responseObject.errorCode !== 0) { 
     disabledHeader(false);
+    Toast("Fail Connection", "#FF2400")
     console.error("onConnectionLost:" + responseObject.errorMessage);
   }
 }
 
 // called when a message arrives
 function onMessageArrived(message) {
-  console.log(message);
-  console.log("onMessageArrived:" + message.payloadString);
+  messageArrived(message)
 }
 
 /********************************************** */
@@ -69,7 +69,7 @@ const mqtt = (disconnect) => {
 
   if (client != null && disconnect) {
     console.log("desconecto");
-
+    Toast("Disconnected", "#254117")
     client.disconnect();
     disabledHeader(false);
   } else {

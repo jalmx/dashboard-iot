@@ -15,8 +15,8 @@ const getElementIconFromModel = () => {
 };
 
 const getIconFromModel = () => {
-  const iconFeature = {}; 
-  const icon = getElementIconFromModel(); 
+  const iconFeature = {};
+  const icon = getElementIconFromModel();
 
   if (icon.hasChildNodes()) {
     iconFeature.input = icon.firstChild.type;
@@ -64,8 +64,8 @@ const getParametersFromCard = () => {
   const payloadPublishOff = document.getElementById("payload-publish-off");
   const descriptionInput = document.getElementById("modal-input-description");
 
-  const id = uid(25)
-  const widget = { 
+  const id = uid(25);
+  const widget = {
     id: `widget-${id}`,
     _id: id,
     pin: pinInput.value,
@@ -75,6 +75,7 @@ const getParametersFromCard = () => {
     status: status.checked,
     thing: thingInput.value,
     description: descriptionInput.value,
+    value: status.checked?payloadSubscribeOn.value: payloadSubscribeOff.value,
     thingColor: {
       colorOn: colorOnInput.value,
       colorOff: colorOffInput.value,
@@ -127,7 +128,7 @@ const changeColorIconModal = (e) => {
 };
 
 const loadIconModal = (data) => {
-  const icon = getElementIconFromModel(); 
+  const icon = getElementIconFromModel();
 
   for (let index = 0; index < icon.classList.length; index++) {
     const element = icon.classList[index].trim();
