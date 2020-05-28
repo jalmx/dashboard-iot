@@ -35,7 +35,7 @@ const sitemapTask = () => {
   return src("./public/**/*.html", { read: false })
     .pipe(
       sitemap({
-        siteUrl: "https://www.alejandro-leyva.com/",
+        siteUrl: "https://xizuth-iot.web.app/",
       })
     )
     .pipe(dest("./public"));
