@@ -2,8 +2,10 @@ article.card#card-
   header.card__header
     h3.card__header__pin.cursor#card-pin D0
     h3.card__header__pin.cursor#card-pin ESP8266
-    i.card__header__menu.icon-menu
-      .card__header__menu__menu#card-menu
+    i(data-id="").card__header__menu.icon-menu
+      ul(data-id="").card__header__menu__container#card-menu
+        li(data-id="" data-menu="edit").card__header__menu__item.pointer Edit 
+        li(data-id="" data-menu="delete").card__header__menu__item.pointer Delete
   .card__body
     div(data-color-on="" data-color-off="" data-icon="" data-value="" data-status="" data-id="").card__body__icon.pointer.icons-size.icns-red#card-icon 1024
     h2(title="Description").card__body__description.pointer#card-description Voltimetro  

@@ -21,6 +21,23 @@
   &__header {
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    &__menu{
+      &__container{
+        position: absolute;
+        left: 93%;
+        top: 80%;
+        z-index: 2;
+      }
+      &__item{
+        background: whitesmoke;
+        font-style: normal;
+        padding: .5rem 1rem;
+        border: 1px solid gray;
+        list-style: none;
+      }
+
+    }
   }
   &__body {
     flex-direction: column;
@@ -46,6 +63,7 @@
     &__icon {
       font-size: 5rem;
       flex: auto;
+      min-height: 104px;
     }
 
   }

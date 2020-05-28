@@ -46,6 +46,12 @@ const btnAddCard = () => {
     modalContainer.innerHTML = html;
     document.body.appendChild(modalContainer);
   });
+
+  document.addEventListener("click", e=>{
+    if(e.target.classList.contains("modal")){
+      removeCardAddFromUI()
+    }
+  })
 };
 
 const getParametersFromCard = () => {

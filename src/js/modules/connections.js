@@ -1,6 +1,7 @@
 import { getAllWidget } from "./localStorage";
 import Toast from "./toast";
 import moment from "moment";
+const Paho = require("paho-mqtt");
 const topicsSubscribeList = {};
 const widgetsList = {};
 
@@ -37,12 +38,14 @@ const subscription = ({ client, topic }) => {
 
 const publishers = (client) => {
   document.addEventListener("click", (e) => {
-    if (!client || !e.target.dataset.id) return;
-
+    if (!client || !e.target.dataset.widget) return; 
+    
     const card = document.getElementById("body-" + e.target.dataset.id);
     const data = card.dataset;
 
-    const widget = widgetsList[data.id];
+    console.log(widgetsList); 
+
+    const widget = widgetsList[data.id.trim()];
     console.log(widget);
 
     if (!widget.topic.publish.topic)
@@ -53,12 +56,14 @@ const publishers = (client) => {
         ? widget.topic.publish.payloadOff
         : widget.topic.publish.payloadOn;
 
-    const message = new Paho.MQTT.Message(value);
+    const message = new Paho.Message(value);
     message.destinationName = widget.topic.publish.topic;
     client.send(message);
   });
 
   document.addEventListener("change", (e) => {
+    console.log("Algo cambio");
+    
     //TODO: cuando de enter envien los inputs su informacion
   });
 };

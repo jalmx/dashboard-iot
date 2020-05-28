@@ -66,46 +66,45 @@ module.exports = /*html*/ `
             </datalist>
         </div>
         <div class="modal__body__button"><select class="modal__select" name="" id="modal-thing">
-                <option data-input="" data-color="#FFD600" data-icon-off="" data-icon-on="icon-bulb"
-                    data-class="" value="bulb">Bulb</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="" data-class="" value="Text">
-                    Text</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-fan"
-                    data-class="animate-spin" value="fan">Fan</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-videocam" data-class=""
-                    value="cam">Cam</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-flash" data-class=""
-                    alue="current">Current</option>
-                <option data-input="" data-color="" data-icon-off="icon-lock-open" data-icon-on="icon-lock"
-                    data-class="" value="lock">Lock</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-account-alert"
-                    data-class="" value="presence">Person</option>
-                <option data-input="" data-color="" data-icon-off="icon-toggle-switch-off"
-                    data-icon-on="icon-toggle-switch" data-class="" value="switch">switch</option>
-                <option data-input="" data-color="" data-icon-off="icon-toggle-off"
-                    data-icon-on="icon-toggle-on" data-class="" value="switch">Toggle</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-key" data-class=""
-                    value="key">Key</option>
-                <option data-input="" data-color="" data-icon-off="icon-battery-0" data-icon-on="icon-battery-4"
-                    data-class="" value="batery">batery</option>
-                <option data-input="" data-color="#3949AB" data-icon-off="" data-icon-on="icon-bluetooth"
-                    data-class="" value="bluetooth">Bluetooth</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-thermometer"
-                    data-class="" value="thermometer">Thermometer</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-snow" data-class=""
-                    value="a/c">A/C</option>
-                <option data-input="" data-color="" data-icon-off="icn-motor-dc"
-                    data-icon-on="icn-motor-dc-fill" data-class="" value="motor">Motor</option>
-                <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-car" data-class="">Car
-                </option>
-                <option data-input="range" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                    value="slider">Slider</option>
-                <option data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                    value="input">Input Text</option>
-                <option data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                    value="input">Color picker</option>
-                <option data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                    value="textarea">Logger</option>
+            <option data-input="" data-color="#FFD600" data-icon-off="" data-icon-on="icon-bulb"
+                data-class="" value="bulb">Bulb</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="" data-class="" value="Text">
+                Text</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-fan"
+                data-class="animate-spin" value="fan">Fan</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-videocam" data-class=""
+                value="cam">Cam</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-flash" data-class=""
+                alue="current">Current</option>
+            <option data-input="" data-color="" data-icon-off="icon-lock-open" data-icon-on="icon-lock"
+                data-class="" value="lock">Lock</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-account-alert"
+                data-class="" value="presence">Person</option>
+            <option data-input="" data-color="" data-icon-off="icon-toggle-switch-off"
+                data-icon-on="icon-toggle-switch" data-class="" value="switch">switch</option>
+            <option data-input="" data-color="" data-icon-off="icon-toggle-off"
+                data-icon-on="icon-toggle-on" data-class="" value="switch">Toggle</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-key" data-class=""
+                value="key">Key</option>
+            <option data-input="" data-color="" data-icon-off="icon-battery-0" data-icon-on="icon-battery-4"
+                data-class="" value="batery">batery</option>
+            <option data-input="" data-color="#3949AB" data-icon-off="" data-icon-on="icon-bluetooth"
+                data-class="" value="bluetooth">Bluetooth</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-thermometer"
+                data-class="" value="thermometer">Thermometer</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-snow" data-class=""
+                value="a/c">A/C</option>
+            <option data-input="" data-color="" data-icon-off="icn-motor-dc"
+                data-icon-on="icn-motor-dc-fill" data-class="" value="motor">Motor</option>
+            <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-car" data-class="" value="car">Car</option>
+            <option data-input="range" data-color="" data-icon-off="" data-icon-on="" data-class=""
+                value="input">Slider</option>
+            <option data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class=""
+                value="input">Input Text</option>
+            <option data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class=""
+                value="input">Color picker</option>
+            <option data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class=""
+                value="textarea">Logger</option>
             </select><input class="modal__url" type="text" placeholder="Ligth Room" id="modal-input-description"/></div>
     </div>
     <footer class="card__footer modal__card__footer">

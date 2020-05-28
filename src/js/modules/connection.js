@@ -1,6 +1,7 @@
 import { getUserStorage, getHostStorage } from "./localStorage";
-import {subscriptions, publishers,messageArrived} from './connections'
-import Toast from './toast'
+import { subscriptions, publishers, messageArrived } from "./connections";
+import Toast from "./toast";
+const Paho = require("paho-mqtt");
 let client = null;
 
 const disabledHeader = (status) => {
@@ -25,9 +26,9 @@ const getConnectionSetting = (user) => {
     onSuccess: onConnect,
     cleanSession: true,
     onFailure: function (error) {
-      console.log(error); 
+      console.log(error);
       disabledHeader(false);
-      Toast("Fail Connection","#FF2400")
+      Toast("Fail Connection", "#FF2400");
       alert("Fail Connection", error.errorMessage);
     },
   };
@@ -42,23 +43,23 @@ const getConnectionSetting = (user) => {
 
 function onConnect() {
   console.log("Connected");
-  Toast("Connected","#348017")
-  subscriptions(client)
-  publishers(client)
+  Toast("Connected", "#348017");
+  subscriptions(client);
+  publishers(client);
 }
 
-// called when the client loses its connection 
+// called when the client loses its connection
 function onConnectionLost(responseObject) {
-  if (responseObject.errorCode !== 0) { 
+  if (responseObject.errorCode !== 0) {
     disabledHeader(false);
-    Toast("Fail Connection", "#FF2400")
-    console.error("onConnectionLost:" + responseObject.errorMessage);
+    Toast("Fail Connection", "#FF2400");
+    console.error("onConnectionLost:", responseObject.errorMessage);
   }
 }
 
 // called when a message arrives
 function onMessageArrived(message) {
-  messageArrived(message)
+  messageArrived(message);
 }
 
 /********************************************** */
@@ -68,16 +69,13 @@ const mqtt = (disconnect) => {
   const host = getHostStorage();
 
   if (client != null && disconnect) {
-    console.log("desconecto");
-    Toast("Disconnected", "#254117")
+    console.log("Disconnected");
+    Toast("Disconnected", "#254117");
     client.disconnect();
+    client= null
     disabledHeader(false);
   } else {
-    client = new Paho.MQTT.Client(
-      host.host,
-      Number(host.port),
-      user.clientId
-    ); 
+    client = new Paho.Client(host.host, Number(host.port), user.clientId);
     disabledHeader(true);
 
     client.onConnectionLost = onConnectionLost;

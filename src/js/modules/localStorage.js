@@ -24,26 +24,40 @@ const getHostStorage = () => {
   return JSON.parse(host) || null;
 };
 
-const insertWidget = (widget) => {
-  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array(); 
-  widgets.push(widget);
+const setAllWidgets = (widgets) => {
   localStorage.setItem(widgetListId, JSON.stringify(widgets));
 };
 
+const insertWidget = (widget) => {
+  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array();
+  widgets.push(widget);
+  setAllWidgets(widgets);
+  setStatusStorage(false)
+};
+
 const removeWidget = (widgetId) => {
-  let widgets = localStorage.getItem(widgetId);
+  let widgets = getAllWidget();
 
-  if (widgets == null || widgets.length == 0) {
-    return [];
+  if (!widgets.length) return;
+
+  for (let index = 0; index < widgets.length; index++) {
+    if (widgets[index]._id == widgetId) {
+      widgets.splice(index, 1);
+    }
   }
-
-  widgets = JSON.parse(widgets);
-
-  // TODO: Recorrer el array y remover el item del array
+  setAllWidgets(widgets);
 };
 
 const getAllWidget = () => {
   return JSON.parse(localStorage.getItem(widgetListId)) || [];
+};
+
+const setStatusStorage = (status) => {
+  localStorage.setItem("status", status);
+};
+
+const getStatusStorage = () => {
+  return localStorage.getItem("status");
 };
 
 module.exports = {
@@ -55,4 +69,6 @@ module.exports = {
   insertWidget,
   removeWidget,
   getAllWidget,
+  getStatusStorage,
+  setStatusStorage,
 };
