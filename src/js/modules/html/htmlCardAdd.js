@@ -97,14 +97,10 @@ module.exports = /*html*/ `
             <option data-input="" data-color="" data-icon-off="icn-motor-dc"
                 data-icon-on="icn-motor-dc-fill" data-class="" value="motor">Motor</option>
             <option data-input="" data-color="" data-icon-off="" data-icon-on="icon-car" data-class="" value="car">Car</option>
-            <option data-input="range" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                value="input">Slider</option>
-            <option data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                value="input">Input Text</option>
-            <option data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                value="input">Color picker</option>
-            <option data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class=""
-                value="textarea">Logger</option>
+            <option data-input="range" data-color="" data-icon-off="" data-icon-on="" data-class="" value="input">Slider</option>
+            <option data-input="text" data-color="" data-icon-off="" data-icon-on="" data-class="" value="input">Input Text</option>
+            <option data-input="color" data-color="" data-icon-off="" data-icon-on="" data-class="" value="input">Color picker</option>
+            <option data-input="textarea" data-color="" data-icon-off="" data-icon-on="" data-class="" value="textarea">Logger</option>
             </select><input class="modal__url" type="text" placeholder="Ligth Room" id="modal-input-description"/></div>
     </div>
     <footer class="card__footer modal__card__footer">

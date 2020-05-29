@@ -26,13 +26,13 @@ const getHostStorage = () => {
 
 const setAllWidgets = (widgets) => {
   localStorage.setItem(widgetListId, JSON.stringify(widgets));
+  setStatusStorage(true)
 };
 
 const insertWidget = (widget) => {
   let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array();
   widgets.push(widget);
-  setAllWidgets(widgets);
-  setStatusStorage(false)
+  setAllWidgets(widgets); 
 };
 
 const removeWidget = (widgetId) => {

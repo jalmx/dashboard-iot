@@ -47,12 +47,17 @@
   }
 
   &__body {
-    &__top {
+    &__top { 
       width: 100%;
       padding: 0.5rem 0;
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: center; 
+      
+      .icons-size input{ 
+        margin: 3rem .5rem;
+        padding: .25rem;
+      }
     }
     .input__color {
       display: flex;

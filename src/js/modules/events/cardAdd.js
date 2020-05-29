@@ -1,6 +1,7 @@
 import uid from "uid";
 import { insertWidget } from "../localStorage";
 import addCardWidget from "../events/loadWidget";
+import connections from '../connections'
 
 const removeCardAddFromUI = () => {
   document.body.removeChild(document.getElementById("modal-container"));
@@ -44,7 +45,7 @@ const btnAddCard = () => {
     const modalContainer = document.createElement("DIV");
     modalContainer.setAttribute("id", "modal-container");
     modalContainer.innerHTML = html;
-    document.body.appendChild(modalContainer);
+    document.body.appendChild(modalContainer); 
   });
 
   document.addEventListener("click", e=>{
@@ -114,6 +115,7 @@ const btnsEventsCardAdd = () => {
     } else if (btn == "modal-ok") {
       e.preventDefault();
       addCardWidget(getParametersFromCard());
+      connections.subscription()
     }
   });
 };

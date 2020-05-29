@@ -1,5 +1,7 @@
 import { removeWidget } from "../localStorage";
 import Toast from "../toast";
+import connections from '../connections'
+
 const deleteCard = (id) => {
   const card = document.getElementById(`card-widget-${id}`);
   const main = document.getElementById("main");
@@ -21,9 +23,10 @@ const menuEvent = () => {
         // TODO: lanzar el add widget con todos los datos cargador
       } else if (e.target.dataset.menu == "delete") {
         deleteCard(e.target.dataset.id);
+        connections.subscription()
       }
-    }
-
+    } 
+    
     if (e.target.classList.contains("main")) {
       const menus = document.querySelectorAll(".card__header__menu__container")
       menus.forEach(menu =>{

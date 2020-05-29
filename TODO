@@ -1,11 +1,10 @@
 # TODO: LIST
 
 ## JS
-- [ ] Despues de agregar un elemento, se cargue en memoria, una vez ya estas conectado
+- [x] Despues de agregar un elemento, se cargue en memoria, una vez ya estas conectado
 - [ ] Mostrar los cambios cuando sea un text
 - [ ] En el input no dejar poner wildcards
 - [ ] Agregar el topic global 
-- [ ] Hacer un menu para agregar un SSL al Websocket
 - [ ] Agregar menu para editar y eliminar
   - [ ] Agregar menu para editar cargue los datos a la ventana con los datos previos
   - [x] Agregar menu eliminar, y saque al elemento del DOM, de localStorage
@@ -17,6 +16,10 @@
 ## CSS
 
 - [ ] Arreglar el Toast 
-- [ ] Arreglar los estilos de los inputs
+- [x] Arreglar los estilos de los inputs
 - [ ] Agregar el topic global
 - [ ] Esconder el user y pass del header
+
+# FUTURE
+
+- [ ] Hacer un menu para agregar un SSL al Websocket

@@ -1,9 +1,10 @@
-import { getAllWidget } from "./localStorage";
+import { getAllWidget, getStatusStorage } from "./localStorage";
 import Toast from "./toast";
 import moment from "moment";
 const Paho = require("paho-mqtt");
 const topicsSubscribeList = {};
 const widgetsList = {};
+let client = null;
 
 const saveTopicSubscribe = (widget) => {
   if (widget.topic.subscribe.topic) {
@@ -16,37 +17,42 @@ const saveTopicSubscribe = (widget) => {
   widgetsList[widget._id] = widget;
 };
 
-const subscriptions = (client) => {
+const loadSubscriptions = () => {
+  const listWidgets = getAllWidget();
+
+  for (let index = 0; index < listWidgets.length; index++) {
+    const widget = listWidgets[index];
+    if (!widget.topic.subscribe.topic) continue;
+    client.subscribe(widget.topic.subscribe.topic);
+    saveTopicSubscribe(widget);
+  }
+};
+
+const subscriptions = (c) => {
+  client = c;
+
   if (client) {
-    const listWidgets = getAllWidget();
-    listWidgets.forEach((widget) => {
-      if (!widget.topic.subscribe.topic) return;
-      client.subscribe(widget.topic.subscribe.topic);
-      saveTopicSubscribe(widget);
-    });
+    loadSubscriptions();
   } else {
     console.log("Can`t subscribe");
     Toast("Fail to subscriptions", "tomato");
   }
 };
 
-const subscription = ({ client, topic }) => {
-  if (topic) {
-    client.subscribe(topic);
+const subscription = () => {
+  if (client) {
+    console.log("Actualizar elements");
+    loadSubscriptions();
   }
 };
 
 const publishers = (client) => {
   document.addEventListener("click", (e) => {
-    if (!client || !e.target.dataset.widget) return; 
-    
+    if (!client || !e.target.dataset.widget) return;
+
     const card = document.getElementById("body-" + e.target.dataset.id);
     const data = card.dataset;
-
-    console.log(widgetsList); 
-
     const widget = widgetsList[data.id.trim()];
-    console.log(widget);
 
     if (!widget.topic.publish.topic)
       return console.log("No have to topic to publish");
@@ -63,16 +69,14 @@ const publishers = (client) => {
 
   document.addEventListener("change", (e) => {
     console.log("Algo cambio");
-    
     //TODO: cuando de enter envien los inputs su informacion
   });
 };
 
 const updateCard = (widget, message, hashtag) => {
   const id = widget._id;
-  const status = document.getElementById(`card-btn-status-${id}`);
-
-  if (!status.checked) return console.log("no activated widget", id);
+  const status = document.getElementById(`card-btn-status-${id}`); 
+  if (!status || !status.checked) return console.log("no activated widget", id);
   const icon = document.getElementById(`card-icon-${id}`);
   //TODO: checar que iconos van a cambiar de estado y ver la transicion del cambio
 
@@ -94,7 +98,6 @@ const updateCard = (widget, message, hashtag) => {
   }
 
   if (changeValue) widget.value = message.payloadString;
-  console.log("change:", widget);
 };
 
 const updateLogger = (log, message) => {
