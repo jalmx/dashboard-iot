@@ -1,11 +1,12 @@
 import { getAllWidget } from "../localStorage";
-import loadWidget from "./loadWidget";
+import {loadWidgetUI} from "./loadWidget";
 import menuEvent from "./menuCard";
 
 const loadAllWidgets = () => {
-  const listWidgets = getAllWidget();
+  const listWidgets = getAllWidget(); 
+  
   listWidgets.forEach((element) => {
-    loadWidget(element);
+    loadWidgetUI(element);
   });
   menuEvent();
 };

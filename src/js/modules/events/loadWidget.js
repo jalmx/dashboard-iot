@@ -1,13 +1,29 @@
 import buildCard from "../html/htmlCard";
 
-const loadWidget = (data = {}) => {
+const createCard = (data, child) => {
   const mainElement = document.getElementById("main");
   const cardElement = document.createElement("article");
   cardElement.setAttribute("id", `card-${data.id}`);
   cardElement.setAttribute("class", "card");
   cardElement.setAttribute("data-id", data._id);
-  cardElement.innerHTML = buildCard(data);
-  mainElement.appendChild(cardElement);
+  const html = buildCard(data);
+  cardElement.innerHTML = html; 
+
+  child
+    ? mainElement.replaceChild(cardElement, child)
+    : mainElement.appendChild(cardElement);
 };
 
-export default loadWidget;
+const updateWidgetUI = (data) => {
+  const oldChild = document.getElementById(`card-${data.id}`);
+  createCard(data, oldChild);
+};
+
+const loadWidgetUI = (data) => { 
+  createCard(data);
+};
+
+module.exports = {
+  loadWidgetUI,
+  updateWidgetUI,
+};

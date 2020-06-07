@@ -2,6 +2,17 @@ const hostId = "host";
 const userId = "xizuth-id";
 const widgetListId = "widgets";
 
+const updateWidget = (widget) => {
+  let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array(); 
+
+  for (let index = 0; index < widgets.length; index++) {
+    if (widgets[index].id == widget.id) {
+      widgets[index] = widget;
+    }
+  }
+  setAllWidgets(widgets);
+};
+
 const saveUserStorage = (user = {}) => {
   localStorage.setItem(userId, JSON.stringify(user));
 };
@@ -26,13 +37,12 @@ const getHostStorage = () => {
 
 const setAllWidgets = (widgets) => {
   localStorage.setItem(widgetListId, JSON.stringify(widgets));
-  setStatusStorage(true)
 };
 
 const insertWidget = (widget) => {
   let widgets = JSON.parse(localStorage.getItem(widgetListId)) || new Array();
   widgets.push(widget);
-  setAllWidgets(widgets); 
+  setAllWidgets(widgets);
 };
 
 const removeWidget = (widgetId) => {
@@ -52,14 +62,6 @@ const getAllWidget = () => {
   return JSON.parse(localStorage.getItem(widgetListId)) || [];
 };
 
-const setStatusStorage = (status) => {
-  localStorage.setItem("status", status);
-};
-
-const getStatusStorage = () => {
-  return localStorage.getItem("status");
-};
-
 module.exports = {
   saveUserStorage,
   getUserStorage,
@@ -67,8 +69,7 @@ module.exports = {
   saveHostStorage,
   getHostStorage,
   insertWidget,
+  updateWidget,
   removeWidget,
   getAllWidget,
-  getStatusStorage,
-  setStatusStorage,
 };
