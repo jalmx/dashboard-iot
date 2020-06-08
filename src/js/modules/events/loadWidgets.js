@@ -1,6 +1,6 @@
 import { getAllWidget } from "../localStorage";
 import {loadWidgetUI} from "./loadWidget";
-import menuEvent from "./menuCard";
+import {menuEvent} from "./menuCard";
 
 const loadAllWidgets = () => {
   const listWidgets = getAllWidget(); 

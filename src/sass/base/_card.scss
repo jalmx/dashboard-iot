@@ -64,6 +64,12 @@
       font-size: 5rem;
       flex: auto;
       min-height: 104px;
+      input[type="text"]{
+        padding: .5rem;
+        font-size: 1rem;
+        border-radius: 10px; 
+        border: .5px solid var(--color-cta);
+      }
     }
 
   }

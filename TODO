@@ -13,22 +13,24 @@
 - [x] Cuando lo ponga offline lo actualizo en localStorage
 - [x] Cuando lo ponga offline colocar disabled los input 
 - [x] Mandar lo que tiene el "value"
-- [ ] Agregrar el icono de **Texto**
-- [ ] Agregar el evento a los inputs de cards y envia el dato con un "enter"
-- [ ] Cuando presione "esc" quitar el add card
-- [ ] En el input MODAL no dejar poner wildcards 
+- [x] Agregrar el icono de **Texto**
+- [x] Agregar el evento a los inputs de cards y envia el dato con un "enter"
+- [x] Cuando presione "esc" quitar el add card
+- [x] Cuando presione "esc" borre el contenido del input
+- [x] En el input MODAL no dejar poner wildcards 
 
 ## CSS
 
-- [ ] Arreglar el Toast 
+- [x] Arreglar el Toast 
+- [x] Darle estilos a input text de los card 
+- [x] Agregar el icon-text para representar un texto en el modal
 - [x] Arreglar los estilos de los inputs
-- [ ] Esconder el user y pass del header
-- [ ] Agregar el icon-text para representar un texto en el modal
 - [x] Cambiar el color de fondo a un gris claro
 - [x] Agregrarle style a input text y textarea dentro del card
 - [x] arreglar el textarea del modal
 
 # FUTURE
 
+- [ ] Esconder el user y pass del header 
 - [ ] Hacer un menu para agregar un SSL al Websocket
 - [ ] Agregar el topic global 

@@ -1,6 +1,6 @@
 import uid from "uid";
 import { loadWidgetUI, updateWidgetUI } from "../events/loadWidget";
-import { insertWidget,updateWidget } from "../localStorage";
+import { insertWidget, updateWidget } from "../localStorage";
 import connections from "../connections";
 
 const removeCardAddFromUI = () => {
@@ -18,12 +18,12 @@ const getElementIconFromModal = () => {
 
 const getIconFromModal = () => {
   const iconFeature = {};
-  const icon = getElementIconFromModal(); 
-  
-  if (icon.firstElementChild) { 
+  const icon = getElementIconFromModal();
+
+  if (icon.firstElementChild) {
     iconFeature.input = getDataIcon().input;
   } else {
-    const iconsList = icon.classList; 
+    const iconsList = icon.classList;
 
     for (let index = 0; index < iconsList.length; index++) {
       const element = iconsList[index];
@@ -37,7 +37,7 @@ const getIconFromModal = () => {
         iconFeature.iconOff = icons.iconOff ? icons.iconOff : "";
       }
     }
-  } 
+  }
   return iconFeature;
 };
 
@@ -128,7 +128,7 @@ const btnsEventsCardAdd = () => {
       const { widget, edit } = data;
       removeCardAddFromUI();
 
-      if (edit) { 
+      if (edit) {
         updateWidgetUI(widget);
         updateWidget(widget);
         connections.subscription();
@@ -192,11 +192,15 @@ const loadIconModal = (data) => {
 
     let hasIcon = element.search(/icon-/);
     let hasIcon2 = element.search(/icn-m/);
-    //TODO: aqui vale icono del text
+
     if (hasIcon != -1 || hasIcon2 != -1) {
-      icon.classList.remove(element);
+      icon.classList.remove(element); 
+
       if (data.iconOn) {
         icon.innerText = "";
+        if (data.iconOn.match("icon-text")) {
+          icon.innerHTML = /*html*/ `<h1>Value</h1>`
+        }
         icon.classList.add(data.iconOn);
       }
     } else if (data.iconOn) {
@@ -230,4 +234,4 @@ const addCardEvents = () => {
   btnAddCard();
 };
 
-module.exports = { addCardEvents, renderModal };
+module.exports = { addCardEvents, renderModal , removeCardAddFromUI};

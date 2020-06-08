@@ -13,26 +13,26 @@
   &__card {
     margin: auto;
     background: white;
+    width: 360px;
     height: auto;
 
     &__footer {
       align-items: center;
       &__topic {
         display: flex;
-        flex-direction: column; 
-        width: 100%; 
+        flex-direction: column;
+        width: 100%;
         flex-grow: 1;
         flex-shrink: 1;
-        & * { 
-          width: 100% !important; 
+        & * {
+          width: 100% !important;
         }
       }
 
-      &__playload{
-        & > *{
+      &__playload {
+        & > * {
           width: 50% !important;
         }
-        
       }
     }
   }
@@ -47,16 +47,20 @@
   }
 
   &__body {
-    &__top { 
+    &__top {
       width: 100%;
       padding: 0.5rem 0;
       display: flex;
       justify-content: space-between;
-      align-items: center; 
-      
-      .icons-size input{ 
-        margin: 3rem .5rem;
-        padding: .25rem;
+      align-items: center;
+      min-height: 135px;
+
+      .modal__url {
+        flex-grow: 0;
+      }
+      .icons-size input {
+        margin: 3rem 0.5rem;
+        padding: 0.25rem;
       }
     }
     .input__color {
@@ -104,4 +108,27 @@
     color: var(--color-cta);
     border: 1px solid var(--color-cta);
   }
+}
+
+#modal-icon {
+  min-width: 104px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  text-transform: uppercase;
+
+  input[type="color"] {
+    height: 50px;
+    width: 80px;
+  }
+
+  textarea {
+    width: 75%;
+    height: 80px; 
+  }
+}
+
+.warning{
+  border-color: red;
 }

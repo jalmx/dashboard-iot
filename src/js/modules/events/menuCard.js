@@ -47,4 +47,4 @@ const menuEvent = () => {
   });
 };
 
-module.exports = menuEvent;
+module.exports = {menuEvent, removeMenu};
