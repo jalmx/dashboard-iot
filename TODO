@@ -3,20 +3,20 @@
 ## JS
 - [x] Despues de agregar un elemento, se cargue en memoria, una vez ya estas conectado
 - [x] Mostrar los cambios cuando sea un text
-- [x] Mandar lo que tiene el "value"
-- [ ] En el input no dejar poner wildcards 
 - [x] Agregar menu para editar y eliminar
   - [x] Agregar menu para editar cargue los datos a la ventana con los datos previos
   - [x] Agregar menu eliminar, y saque al elemento del DOM, de localStorage
 - [x] Hacer el cambio de iconos
 - [x] Agregar el movimiento del ventilador
-- [x] Verificar el status de los loggers
-- [x] Agregar el evento a los inputs de cards y envia el dato con un "enter"
-- [ ] Cuando presione "esc" quitar el add card
 - [x] Agregar el evento al Text que envie lo que tiene
-- [ ] Cuando lo ponga offline lo actualizo en localStorage
-- [ ] Cuando lo ponga offline colocar disabled los input
-- [ ] El color no se esta enviando CUANDO publica
+- [x] Verificar el status de los loggers
+- [x] Cuando lo ponga offline lo actualizo en localStorage
+- [x] Cuando lo ponga offline colocar disabled los input 
+- [x] Mandar lo que tiene el "value"
+- [ ] Agregrar el icono de **Texto**
+- [ ] Agregar el evento a los inputs de cards y envia el dato con un "enter"
+- [ ] Cuando presione "esc" quitar el add card
+- [ ] En el input MODAL no dejar poner wildcards 
 
 ## CSS
 

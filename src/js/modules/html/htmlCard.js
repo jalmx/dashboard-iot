@@ -1,9 +1,9 @@
 export const getInput = (data) => {
   let input = "";
-  if (data.icon.input == "textarea") {
-    input = `<textarea class="${data.class ? data.class : ""}" data-id="${ data._id }" data-widget="widget" cols="30" rows="10" id="input-${data._id}" disabled></textarea>`;
+  if (data.icon.input == "textarea") { 
+    input = `<textarea class="${data.class ? data.class : ""}" data-id="${ data._id }" data-widget="widget" cols="30" rows="10" id="input-${data._id}" ${!data.status || data.thing=="logger"? "disabled": ""}></textarea>`;
   } else {
-    input = `<input class="input-data" data-input="${data.icon.input}" type="${data.icon.input}" id="input-${data._id}" data-id="${data._id}" data-widget="widget">`;
+    input = `<input class="input-data" data-input="${data.icon.input}" type="${data.icon.input}" id="input-${data._id}" data-id="${data._id}" ${!data.status? "disabled": ""} data-widget="widget">`;
   }
   return input;
 };

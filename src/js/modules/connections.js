@@ -22,8 +22,8 @@ const loadSubscriptions = () => {
 
   for (let index = 0; index < listWidgets.length; index++) {
     const widget = listWidgets[index];
-    if (!widget.topic.subscribe.topic) continue;
-    client.subscribe(widget.topic.subscribe.topic);
+    if (widget.topic.subscribe.topic)
+      client.subscribe(widget.topic.subscribe.topic);
     saveTopicSubscribe(widget);
   }
 };
@@ -47,13 +47,15 @@ const subscription = () => {
 };
 
 const eventPublish = (e) => {
-  if (!client || !e.target.dataset.widget) return; 
+  if (!client || !e.target.dataset.widget) return;
 
   const card = document.getElementById("body-" + e.target.dataset.id);
   const data = card.dataset;
   const id = data.id.trim();
+
   const widget = widgetsList[id];
-  if (!widget) return;
+
+  if (!widget) return console.log("No widget exist");
 
   if (!widget.topic.publish.topic)
     return console.log("No have to topic to publish");
@@ -61,6 +63,8 @@ const eventPublish = (e) => {
   let value = "";
 
   if (widget.thing == "value" || widget.icon.input) {
+    console.log("input", widget.icon.input);
+
     if (widget.icon.input == "textarea") {
       const input = document.getElementById(`input-${id}`);
       value = input.textContent;
@@ -89,7 +93,6 @@ const eventPublish = (e) => {
 const publishers = (c) => {
   client = c;
   document.addEventListener("click", (e) => eventPublish(e));
-
   document.addEventListener("change", (e) => eventPublish(e));
 };
 
