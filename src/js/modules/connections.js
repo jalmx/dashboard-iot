@@ -86,6 +86,8 @@ const eventPublish = (e) => {
   if (!value) return console.log("No have value to send");
 
   const message = new Paho.Message(value);
+  message.retained = true
+  message.qos = 1
   message.destinationName = widget.topic.publish.topic;
   client.send(message);
 };
