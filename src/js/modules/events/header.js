@@ -60,7 +60,7 @@ const saveUserUI = () => {
 const getHostStorageLocal = () => {
   const host = getHostStorage();
   if (host != null) {
-    document.getElementById("input-broker").value = `${host.host}:${host.port}`;
+    document.getElementById("input-broker").value = `${host.ssl?"s/":""}${host.host}:${host.port}`;
   }
 };
 

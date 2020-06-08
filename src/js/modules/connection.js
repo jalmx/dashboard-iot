@@ -31,7 +31,7 @@ const getConnectionSetting = (user) => {
       Toast("Fail Connection", "#FF2400");
       alert("Fail Connection", error.errorMessage);
     },
-    useSSL: true
+    useSSL:  getHostStorage().ssl
   };
   if (user.username) {
     connectionSettings.userName = user.username;

@@ -3,16 +3,15 @@ header.header#header
     span
       a(href="https://xizuth.com/" target="_blank") by Xizuth 
   .input__container
-    input(list="list-brokers" type="url" placeholder="broker.shiftr.io:80").input__broker#input-broker
+    input(list="list-brokers" type="url" placeholder="s/broker.shiftr.io:443").input__broker#input-broker
     datalist#list-brokers
       option broker.shiftr.io:80
-      option broker.shiftr.io:443
+      option s/broker.shiftr.io:443
       option broker.hivemq.com:8000
       option broker.mqttdashboard.com:8000
       option test.mosquitto.org:8080
-      option test.mosquitto.org:8081
+      option s/test.mosquitto.org:8081
     a.input__btn(href="#" ).btn_connect#btn-connect Connect
-  //- #connected-broker Connected to: test.mosquitto.org:8080
   .input__container
     label(for="username-broker").input__label Username
     input(type="text").input__broker#username-broker
@@ -23,4 +22,4 @@ header.header#header
   .header__note
     i Nota: The broker should support Websocket 
   .btn__add__container
-    a(href="/").btn__add#add-widget +
+    a(href="/").btn__add#add-widget + 
