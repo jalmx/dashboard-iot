@@ -1,16 +1,12 @@
-# TODO: LIST
-
-## GRL
-
-- [ ] rutas en el manifest
+# TODO: LIST 
 
 ## JS 
-- [ ] Service worker
+[ ] al dar click en el status no está desactivando el widget
 
 ## CSS 
 
 # FUTURE
 
-- [ ] Esconder el user y pass del header 
-- [ ] Hacer un menu para agregar un SSL al Websocket
+- [ ] Service worker
+- [ ] Esconder el user y pass del header
 - [ ] Agregar el topic global 
