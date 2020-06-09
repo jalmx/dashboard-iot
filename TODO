@@ -1,7 +1,6 @@
 # TODO: LIST 
 
 ## JS 
-[ ] al dar click en el status no está desactivando el widget
 
 ## CSS 
 
@@ -10,3 +9,4 @@
 - [ ] Service worker
 - [ ] Esconder el user y pass del header
 - [ ] Agregar el topic global 
+- [ ] Al desconectarme desactive las animaciones que existan en los widgets
