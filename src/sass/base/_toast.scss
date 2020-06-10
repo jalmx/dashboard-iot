@@ -1,8 +1,16 @@
-.toast__message{
+.toast{
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // opacity: 0;
+
+  &__message{
+    cursor: default;
     position: fixed;
     z-index: 10;
     top: 80%;
-    left: 40%;
     background: black;
     color: white;
     padding: 1rem 2rem;
@@ -10,4 +18,5 @@
     box-shadow: 2px 2px 5px black;
     transition: all 0.3s;
     text-transform: uppercase;
-  }
+  } 
+}
