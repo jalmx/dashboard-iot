@@ -2,6 +2,19 @@
 
 ## [Go to Dashboard](https://xizuth-iot.web.app/)
 
+## Install
+
+``` bash
+npm install
+```
+
+**then**
+
+``` bash
+gulp build
+```
+This gonna build all project and lanch Browser
+
 ## Screenshot
 
 ![](https://raw.githubusercontent.com/jalmx/dashboard-iot/master/imgs/screencapture-1.png)
