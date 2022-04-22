@@ -224,3 +224,15 @@ watcher.on("all", (path, stats) => {
     server.reload();
   }
 });
+
+// if launch a Error like
+// System limit for number of file watchers reached, watch 'src' 
+// solution for linux:
+
+// sudo sysctl -w fs.inotify.max_user_watches=100000
+
+// in the file /etc/sys.conf put:
+// fs.inotify.max_user_watches = 100000
+
+// create /etc/sysctl.d/10-user-watches.conf with 
+// fs.inotify.max_user_watches = 100000

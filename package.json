@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest"
   },
-  "keywords": [],
+  "keywords": ["iot","dashboard","mqtt","socket"],
   "author": "",
   "license": "ISC",
   "devDependencies": {
